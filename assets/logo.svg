@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Dr. J's Chess Arena logo</title>
+  <desc id="desc">A minimal black and white chess knight emblem.</desc>
+  <rect width="64" height="64" rx="16" fill="#f5f5f5"/>
+  <path
+    d="M42.5 48H19.8c-.8 0-1.4-.6-1.4-1.4v-3.1c0-.8.6-1.4 1.4-1.4h22.7c.8 0 1.4.6 1.4 1.4v3.1c0 .8-.6 1.4-1.4 1.4Zm-4.2-8.6H22.6c-1 0-1.7-.9-1.5-1.9l1.5-7.5c.2-.9.7-1.8 1.4-2.5l5.7-5.3-4.7-2.8c-.8-.5-1-1.6-.4-2.3l4.6-5.3c.5-.6 1.3-.8 2-.5l7.5 3.3c.6.3 1 .8 1.1 1.5l1.7 12.4c.1.8-.1 1.6-.6 2.2l-1.6 2c-.7.9-1.1 1.9-1.1 3v1.7c0 .9-.8 1.6-1.7 1.6Zm-8.9-21.9 3.2 1.7 1.8-1.4-3.9-1.8-1.1 1.5Z"
+    fill="#090909"
+  />
+</svg>
