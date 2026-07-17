@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Challenge Dr. J to a live chess match on Chess.com or Lichess." />
+  <title>Challenge Dr. J | Dr. J's Chess Arena</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/challenge.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="container page-nav">
+      <a class="page-brand" href="index.html" aria-label="Dr. J's Chess Arena home">
+        <img src="assets/logo.svg" alt="" />
+        <span>Dr. J's Chess Arena</span>
+      </a>
+      <nav aria-label="Page navigation">
+        <a href="index.html">Home</a>
+        <a href="play.html">Play vs AI</a>
+        <a class="active" href="challenge.html">Challenge Dr. J</a>
+        <a href="ai-chess.html">AI & Chess</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="challenge-hero">
+      <div class="container challenge-grid">
+        <div class="challenge-copy">
+          <p class="eyebrow">Live chess</p>
+          <h1>Challenge Dr. J.</h1>
+          <p class="hero-text">Pick your platform, choose a time, and send the challenge. The result may be elegant strategy, spectacular chaos, or both.</p>
+
+          <div class="identity-card">
+            <div class="identity-mark" aria-hidden="true">J</div>
+            <div>
+              <strong>Dr. Jagrati Talreja</strong>
+              <span>Postdoctoral Fellow · AI Researcher</span>
+            </div>
+          </div>
+
+          <div class="challenge-points">
+            <div><strong>30 minutes</strong><span>Typical match duration</span></div>
+            <div><strong>Chess.com or Lichess</strong><span>Your preferred platform</span></div>
+            <div><strong>Automatic timezone</strong><span>Handled by Calendly</span></div>
+          </div>
+        </div>
+
+        <aside class="booking-card">
+          <div class="booking-heading">
+            <p class="eyebrow">Request a match</p>
+            <h2>Choose your setup</h2>
+          </div>
+
+          <form id="challenge-form">
+            <fieldset>
+              <legend>Platform</legend>
+              <label class="platform-option">
+                <input type="radio" name="platform" value="Chess.com" checked />
+                <span><strong>Chess.com</strong><small>Play through your Chess.com account</small></span>
+              </label>
+              <label class="platform-option">
+                <input type="radio" name="platform" value="Lichess" />
+                <span><strong>Lichess</strong><small>Play through your Lichess account</small></span>
+              </label>
+            </fieldset>
+
+            <label class="field">
+              <span>Username</span>
+              <input id="chess-username" type="text" placeholder="Your Chess.com or Lichess username" />
+            </label>
+
+            <label class="field">
+              <span>Approximate rating <small>(optional)</small></span>
+              <input id="chess-rating" type="number" min="0" max="3500" placeholder="Example: 1200" />
+            </label>
+
+            <a class="schedule-button" id="schedule-match" href="https://calendly.com/" target="_blank" rel="noopener noreferrer">
+              Schedule match <span aria-hidden="true">↗</span>
+            </a>
+
+            <p class="form-note">Replace the placeholder Calendly link in <code>js/challenge.js</code> with your real event URL.</p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>Three steps. One board.</h2>
+        </div>
+        <div class="process-grid">
+          <article><span>01</span><h3>Choose a platform</h3><p>Select Chess.com or Lichess and provide your username.</p></article>
+          <article><span>02</span><h3>Pick a time</h3><p>Calendly converts available times into your local timezone.</p></article>
+          <article><span>03</span><h3>Receive confirmation</h3><p>Meeting details and the agreed platform arrive by email.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="expectation-section">
+      <div class="container expectation-card">
+        <div><p class="eyebrow">Match format</p><h2>Friendly, focused, competitive.</h2></div>
+        <div class="expectation-list">
+          <p><strong>Time control:</strong> agreed when scheduling</p>
+          <p><strong>Platform:</strong> Chess.com or Lichess</p>
+          <p><strong>Purpose:</strong> strategy, learning, and a good game</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container footer-row">
+      <p>© <span id="current-year"></span> Dr. J's Chess Arena</p>
+      <a href="index.html">Return home</a>
+    </div>
+  </footer>
+
+  <script src="js/challenge.js"></script>
+</body>
+</html>
