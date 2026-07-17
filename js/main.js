@@ -498,7 +498,10 @@ $('#startBtn').on('click', function () {
 
 $('#compVsCompBtn').on('click', function () {
   reset();
-  compVsComp('w');
+
+  $('#status').html(
+    '<b>Your turn.</b> You are White; the computer is Black.'
+  );
 });
 $('#resetBtn').on('click', function () {
   reset();
@@ -593,14 +596,18 @@ function greySquare(square) {
 }
 
 function onDragStart(source, piece) {
-  // do not pick up pieces if the game is over
-  if (game.game_over()) return false;
+  // Do not allow moves after the game is over.
+  if (game.game_over()) {
+    return false;
+  }
 
-  // or if it's not that side's turn
-  if (
-    (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-    (game.turn() === 'b' && piece.search(/^w/) !== -1)
-  ) {
+  // Human always plays White.
+  if (piece.search(/^b/) !== -1) {
+    return false;
+  }
+
+  // Do not allow the human to move while the AI is thinking.
+  if (game.turn() !== 'w') {
     return false;
   }
 }
@@ -633,16 +640,15 @@ function onDrop(source, target) {
     .find('.square-' + squareToHighlight)
     .addClass('highlight-' + colorToHighlight);
 
-  if (!checkStatus('black'));
-  {
-    // Make the best move for black
+  if (!checkStatus('black')) {
+  window.setTimeout(function () {
+    makeBestMove('b');
+
     window.setTimeout(function () {
-      makeBestMove('b');
-      window.setTimeout(function () {
-        showHint();
-      }, 250);
+      showHint();
     }, 250);
-  }
+  }, 250);
+ }
 }
 
 function onMouseoverSquare(square, piece) {
